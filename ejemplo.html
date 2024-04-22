@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha y Hora Actual</title>
+    <script>
+        function mostrarFechaHora() {
+            // Obtener la fecha y hora actual
+            var fechaHora = new Date();
+            
+            // Obtener los componentes de la fecha y hora
+            var dia = fechaHora.getDate();
+            var mes = fechaHora.getMonth() + 1; // Los meses se cuentan desde 0 (enero) hasta 11 (diciembre)
+            var año = fechaHora.getFullYear();
+            var hora = fechaHora.getHours();
+            var minutos = fechaHora.getMinutes();
+            var segundos = fechaHora.getSeconds();
+            
+            // Formatear la salida
+            var salida = "Fecha: " + dia + "/" + mes + "/" + año + "<br>";
+            salida += "Hora: " + hora + ":" + minutos + ":" + segundos;
+            
+            // Mostrar la fecha y hora en el elemento con id "fecha-hora"
+            document.getElementById("fecha-hora").innerHTML = salida;
+        }
+        
+        // Llamar a la función mostrarFechaHora cada segundo para actualizar la fecha y hora
+        setInterval(mostrarFechaHora, 1000);
+    </script>
+</head>
+<body>
+    <h1>Fecha y Hora Actual</h1>
+    <div id="fecha-hora"></div>
+</body>
+</html>
